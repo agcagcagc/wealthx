@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE WEALTH X | World's Richest</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #050505;
+        }
+        .font-display {
+            font-family: 'Orbitron', sans-serif;
+        }
+        /* Custom Neon Glows */
+        .text-glow-red {
+            text-shadow: 0 0 10px rgba(239, 68, 68, 0.6), 0 0 20px rgba(239, 68, 68, 0.4);
+        }
+        .box-glow-red:hover {
+            box-shadow: 0 0 25px rgba(239, 68, 68, 0.35);
+            border-color: rgba(239, 68, 68, 0.8);
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #ef4444;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #dc2626;
+        }
+    </style>
+</head>
+<body class="text-gray-100 overflow-x-hidden relative selection:bg-red-600 selection:text-white">
+
+    <canvas id="particleCanvas" class="fixed top-0 left-0 w-full h-full -z-10 opacity-40 pointer-events-none"></canvas>
+
+    <header class="fixed top-0 w-full z-50 bg-black/70 backdrop-blur-md border-b border-zinc-900 px-6 py-4 flex justify-between items-center">
+        <div class="font-display text-2xl font-black tracking-widest text-white">
+            WEALTH<span class="text-red-600 text-glow-red">X</span>
+        </div>
+        <nav class="hidden md:flex space-x-8 text-sm font-medium tracking-wider uppercase">
+            <a href="#home" class="text-red-500 hover:text-red-400 transition">Home</a>
+            <a href="#billionaires" class="hover:text-red-500 transition">The List</a>
+            <a href="#stats" class="hover:text-red-500 transition">Insights</a>
+        </nav>
+        <button class="bg-red-600 hover:bg-red-700 text-white font-display text-xs font-bold uppercase tracking-widest px-5 py-2.5 rounded-sm transition-all duration-300 shadow-lg shadow-red-600/20 active:scale-95">
+            Live Feed
+        </button>
+    </header>
+
+    <section id="home" class="min-h-screen flex flex-col justify-center items-center text-center px-4 relative pt-16">
+        <div class="absolute inset-0 bg-radial-gradient from-red-900/10 via-transparent to-transparent pointer-events-none"></div>
+        <p class="text-red-500 font-display font-bold tracking-widest uppercase text-xs md:text-sm mb-3 tracking-widest animate-pulse">
+            Exclusive Real-Time Data Index
+        </p>
+        <h1 class="font-display text-5xl md:text-8xl font-black tracking-tighter text-white mb-6 uppercase">
+            The Apex <br class="md:hidden"> <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-amber-500 text-glow-red">Billionaires</span>
+        </h1>
+        <p class="max-w-xl text-gray-400 text-sm md:text-lg font-light mb-10 leading-relaxed">
+            Tracking the absolute peaks of global capital. Explore the net worth, industries, and empires of the world's wealthiest individuals.
+        </p>
+        <a href="#billionaires" class="group flex items-center gap-3 bg-zinc-900/80 border border-zinc-800 hover:border-red-600 text-white px-8 py-4 font-display text-sm tracking-widest uppercase rounded-sm transition-all duration-300 box-glow-red">
+            Explore The Index 
+            <i class="fa-solid fa-arrow-right text-red-500 group-hover:translate-x-1 transition-transform"></i>
+        </a>
+    </section>
+
+    <section id="billionaires" class="py-24 px-4 md:px-12 max-w-7xl mx-auto">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-4 border-b border-zinc-900 pb-6">
+            <div>
+                <h2 class="font-display text-3xl md:text-5xl font-black tracking-tight uppercase">
+                    The Top Tier <span class="text-red-600">.</span>
+                </h2>
+                <p class="text-gray-500 text-sm mt-2">Dynamic tracking of multi-billion dollar market valuations.</p>
+            </div>
+            <div class="text-xs font-display tracking-widest text-zinc-500 uppercase">
+                Showing top 3 powerhouses
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            
+            <div class="billionaire-card bg-zinc-950/60 border border-zinc-900 p-8 rounded-sm relative overflow-hidden group transition-all duration-500 box-glow-red" data-tilt>
+                <div class="absolute top-0 right-0 bg-red-600/10 text-red-500 font-display font-black text-7xl p-4 opacity-20 pointer-events-none group-hover:opacity-40 transition-opacity">
+                    01
+                </div>
+                <div class="mb-6">
+                    <span class="text-xs font-display tracking-widest text-red-500 uppercase bg-red-950/50 border border-red-900/50 px-2 py-1">Technology</span>
+                </div>
+                <h3 class="font-display text-2xl font-bold tracking-tight text-white mb-1 group-hover:text-red-500 transition-colors">Elon Musk</h3>
+                <p class="text-zinc-500 text-sm mb-6">Tesla, SpaceX, xAI</p>
+                <div class="border-t border-zinc-900 pt-6 mt-4">
+                    <p class="text-xs text-zinc-400 uppercase tracking-wider mb-1">Estimated Net Worth</p>
+                    <p class="text-3xl font-display font-black text-white tracking-tight">$210.5 Billion</p>
+                </div>
+            </div>
+
+            <div class="billionaire-card bg-zinc-950/60 border border-zinc-900 p-8 rounded-sm relative overflow-hidden group transition-all duration-500 box-glow-red" data-tilt>
+                <div class="absolute top-0 right-0 bg-red-600/10 text-red-500 font-display font-black text-7xl p-4 opacity-20 pointer-events-none group-hover:opacity-40 transition-opacity">
+                    02
+                </div>
+                <div class="mb-6">
+                    <span class="text-xs font-display tracking-widest text-red-500 uppercase bg-red-950/50 border border-red-900/50 px-2 py-1">Luxury Goods</span>
+                </div>
+                <h3 class="font-display text-2xl font-bold tracking-tight text-white mb-1 group-hover:text-red-500 transition-colors">Bernard Arnault</h3>
+                <p class="text-zinc-500 text-sm mb-6">LVMH Moët Hennessy Louis Vuitton</p>
+                <div class="border-t border-zinc-900 pt-6 mt-4">
+                    <p class="text-xs text-zinc-400 uppercase tracking-wider mb-1">Estimated Net Worth</p>
+                    <p class="text-3xl font-display font-black text-white tracking-tight">$201.2 Billion</p>
+                </div>
+            </div>
+
+            <div class="billionaire-card bg-zinc-950/60 border border-zinc-900 p-8 rounded-sm relative overflow-hidden group transition-all duration-500 box-glow-red" data-tilt>
+                <div class="absolute top-0 right-0 bg-red-600/10 text-red-500 font-display font-black text-7xl p-4 opacity-20 pointer-events-none group-hover:opacity-40 transition-opacity">
+                    03
+                </div>
+                <div class="mb-6">
+                    <span class="text-xs font-display tracking-widest text-red-500 uppercase bg-red-950/50 border border-red-900/50 px-2 py-1">Technology</span>
+                </div>
+                <h3 class="font-display text-2xl font-bold tracking-tight text-white mb-1 group-hover:text-red-500 transition-colors">Jeff Bezos</h3>
+                <p class="text-zinc-500 text-sm mb-6">Amazon</p>
+                <div class="border-t border-zinc-900 pt-6 mt-4">
+                    <p class="text-xs text-zinc-400 uppercase tracking-wider mb-1">Estimated Net Worth</p>
+                    <p class="text-3xl font-display font-black text-white tracking-tight">$194.8 Billion</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="border-t border-zinc-950 bg-black py-12 text-center text-xs text-zinc-600 tracking-wider uppercase">
+        <p>&copy; 2026 WealthX Index. Built for premium visualization.</p>
+    </footer>
+
+    <script>
+        // --- PARTICLE BACKGROUND EFFECT ---
+        const canvas = document.getElementById('particleCanvas');
+        const ctx = canvas.getContext('2d');
+
+        let particles = [];
+        const particleCount = 60;
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2 + 0.5;
+                this.speedX = (Math.random() - 0.5) * 0.5;
+                this.speedY = (Math.random() - 0.5) * 0.5;
+                // Subtle red or dark gray color variants
+                this.color = Math.random() > 0.6 ? 'rgba(239, 68, 68, 0.3)' : 'rgba(255, 255, 255, 0.15)';
+            }
+            update() {
+                this.x += this.xSpeed;
+                this.y += this.ySpeed;
+                
+                if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
+                if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
+                
+                this.x += this.speedX;
+                this.y += this.speedY;
+            }
+            draw() {
+                ctx.fillStyle = this.color;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        function initParticles() {
+            for (let i = 0; i < particleCount; i++) {
+                particles.push(new Particle());
+            }
+        }
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+            requestAnimationFrame(animateParticles);
+        }
+        
+        initParticles();
+        animateParticles();
+
+
+        // --- MOUSE 3D TILT EFFECT ON CARDS ---
+        const cards = document.querySelectorAll('[data-tilt]');
+        
+        cards.forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left; 
+                const y = e.clientY - rect.top; 
+                
+                const xc = rect.width / 2;
+                const yc = rect.height / 2;
+                
+                // Calculate tilt angles
+                const angleX = (yc - y) / 10; 
+                const angleY = (x - xc) / 10;
+                
+                card.style.transform = `perspective(1000px) rotateX(${angleX}deg) rotateY(${angleY}deg) scale(1.02)`;
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
